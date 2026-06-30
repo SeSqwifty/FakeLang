@@ -3,4 +3,4 @@
 *.obj
 build/
 .vscode/
-.log
+*.log
