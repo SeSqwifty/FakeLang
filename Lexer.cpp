@@ -7,6 +7,7 @@ char Lexer::advance()
     return return_character;
 }
 
+// top level function for taking the name of all the tokens
 dynamic_array<Token> Lexer::scan_tokens(string input)
 {
     source = input;

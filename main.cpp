@@ -7,7 +7,8 @@
 
 int main()
 {
-    string source = "6 + 4 + 3 --";
+    write("what do you want to know the tokens of ");
+    string source = read_line();
 
     Lexer lexer;
     dynamic_array<Token> tokens = lexer.scan_tokens(source);

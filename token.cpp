@@ -5,16 +5,10 @@
 #include <memory>
 
 /*
-E = E + T
-E = E - T
-E = T
-
-T = F
-T = T * F
-T = T / F
-
-F = INT
-F = ( E )
+STAR INFERS REPETITION
+E => T ( + OR - T)* 
+T => F(* OR / F)*
+F => INTEGER | ( E )
 */
 
 enum TokenType
@@ -76,7 +70,7 @@ string token_type_to_string(TokenType type)
 
 string token_to_string(Token token)
 {
-    return "Token(type=" + token_type_to_string(token.type) + ", literal=" + token.value + ")";
+    return "Token(type=" + token_type_to_string(token.type) + ", literal=" + token.value + ")\n";
 }
 
 string tokens_to_string(dynamic_array<Token> tokens)
