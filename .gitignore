@@ -1,4 +1,4 @@
-test.exe
+*.exe
 *.o
 *.obj
 build/
