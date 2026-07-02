@@ -7,7 +7,7 @@ BUILD_DIR="build"
 CXX="skm g++"
 FLAGS="-std=c++17 -Wall -Wextra -O2 -pipe"
 
-SRC_FILES="main.cpp Lexer.cpp expr.cpp parser.cpp"
+SRC_FILES="main.cpp Lexer.cpp expr.cpp"
 
 rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"

@@ -1,31 +1,18 @@
-#include "Token.h"
-#include <memory>
+#include "expr.h"
 
-struct Expr
+string expr_to_string(Expr expression)
 {
-    virtual ~Expr() = default;
-};
+    return expression.debug_string;
+}
 
-struct NumberLiteral : Expr
+string number_literal_to_string(NumberLiteral expression)
 {
-    int value;
+    return "NumberLiteral(value=" + to_string(expression.value) + ")";
+}
 
-    NumberLiteral(int value)
-    {
-        this->value = value;
-    }
-};
-
-struct Binary : Expr
+string binary_to_string(Binary expression)
 {
-    Expr left;
-    Token operator_token;
-    Expr right;
-
-    Binary(Expr left, Token operator_token, Expr right)
-    {
-        this->left = left;
-        this->operator_token = operator_token;
-        this->right = right;
-    }
-};
+    return "Binary(left=" + expr_to_string(expression.left) +
+           ", operator=" + token_type_to_string(expression.operator_token.type) +
+           ", right=" + expr_to_string(expression.right) + ")";
+}
