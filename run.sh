@@ -7,7 +7,7 @@ BUILD_DIR="build"
 CXX="skm g++"
 FLAGS="-std=c++17 -Wall -Wextra -O2 -pipe"
 
-SRC_FILES="main.cpp Lexer.cpp expr.cpp"
+SRC_FILES="main.cpp Lexer.cpp expr.cpp compiler.cpp instruction.cpp"
 
 rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
@@ -17,10 +17,8 @@ echo "Compiling..."
 for file in $SRC_FILES
 do
     obj="$BUILD_DIR/$(basename "$file" .cpp).o"
-    $CXX $FLAGS -c "$file" -o "$obj" &
+    $CXX $FLAGS -c "$file" -o "$obj"
 done
-
-wait
 
 echo "Linking..."
 

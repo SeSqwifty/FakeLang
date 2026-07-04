@@ -6,6 +6,7 @@
 #include "Lexer.h"
 #include "expr.h"
 #include "parser.h"
+#include "complier.h"
 
 int main()
 {
@@ -20,6 +21,14 @@ int main()
     parser parser(tokens);
     Expr expression = parser.parse();
     write_line(expr_to_string(expression));
+
+    complier compiler;
+    dynamic_array<instruction> instructions = compiler.compile(expression);
+
+    for (int i = 0; i < length(instructions); i++)
+    {
+        write_line(instruction_to_string(instructions[i]));
+    }
 
     return 0;
 }
