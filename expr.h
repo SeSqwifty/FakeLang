@@ -39,21 +39,19 @@ struct NumberLiteral : Expr
 struct Binary : Expr
 {
     Expr left;
-    Token operator_token;
     Expr right;
 
     Binary(Expr left, Token operator_token, Expr right)
     {
         this->left = left;
-        this->operator_token = operator_token;
         this->right = right;
 
         this->expr_type = EXPR_BINARY;
-        
+
         this->left_expr = std::make_shared<Expr>(left);
         this->right_expr = std::make_shared<Expr>(right);
         this->operator_token = operator_token;
-        
+
         this->debug_string =
             "Binary(left=" + left.debug_string +
             ", operator=" + token_type_to_string(operator_token.type) +
