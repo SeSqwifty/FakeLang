@@ -23,3 +23,9 @@ The program currently prints the generated tokens, the parsed expression and the
 FakeLang supports integers, brackets and the four basic mathematical operators: +, -, * and /.
 
 This project demonstrates the basic stages of creating a programming language: lexing, parsing and compiling.
+
+to compile with G++ you use 
+
+"skm g++ -std=c++17 -Wall -Wextra -O2 -pipe main.cpp Lexer.cpp expr.cpp compiler.cpp instruction.cpp -o samantha.exe"
+
+then use "./samantha.exe" to run the program to see how it works
