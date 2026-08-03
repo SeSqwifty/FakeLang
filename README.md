@@ -26,6 +26,6 @@ This project demonstrates the basic stages of creating a programming language: l
 
 to compile with G++ you use 
 
-"skm g++ -std=c++17 -Wall -Wextra -O2 -pipe main.cpp Lexer.cpp expr.cpp compiler.cpp instruction.cpp -o samantha.exe"
+"skm g++ -std=c++17 -Wall -Wextra -O2 -pipe main.cpp Lexer.cpp expr.cpp compiler.cpp instruction.cpp -o fakelang.exe"
 
-then use "./samantha.exe" to run the program to see how it works
+then use "./fakelang.exe" to run the program to see how it works
